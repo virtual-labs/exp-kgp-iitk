@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <script src="./js/plotly-latest.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.2.0/math.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.1.4/math.min.js"></script>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <script src="./js/tmat.js" type="text/javascript"></script>
+        <script src="./js/MathJax.js"></script>
+        <script type="text/javascript" async
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_CHTML"></script>
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
+        <script src="./js/threejs/three.js"></script>
+
+        <script type="text/javascript" src="./js/threejs/three.min.js"></script>
+        <script type="text/javascript" src="./js/threejs/TrackballControls.js"></script>
+        <script type="text/javascript" src="./js/threejs/Detector.js"></script>
+        <script type="text/javascript" src="./js/threejs/stats.min.js"></script>     
+        <script src="http://threejs.org/examples/js/loaders/STLLoader.js"></script>
+        <script type="text/javascript" src="./js/STLLoader.js"></script>
+        <script type="text/javascript" src="./js/canvas2D.js"></script>
+        <script type="text/javascript" src="./js/axis.js"></script>
+        <script type="text/javascript" src="./js/scene2.js"></script>
+        <script type="text/javascript" src="./js/controller.js"></script>
+        <script src="./js/graph.js" type="text/javascript"></script>
+
+
+    </head>
+    <body onload="myFunction()">
+<center>
+
+        <div class="logo" id="experiment-header-logo">
+            <img src="../images/logo.jpg" style="width:1320px; height:130px">
+        </div>
+
+        <div id="main-wrapper" >
+
+
+            <div id="input-wrapper" >
+                <div id="input-title">Input Panel</div>            
+                <div id="input-view">
+
+                    <fieldset> 
+                        <legend><b>Input Theta Values</b></legend>
+                        <p id="jrv-msg" style="color: red; "></p>
+                        <center><table>
+                                <tr><td>`theta_1`</td> <td><input type="text" name="size1" size="2"  value="0" id="th1"></td><td>`\dot{theta_1}`</td> <td><input type="text" name="size2" size="2"  value="0" id="N1"></td></tr>
+                                <tr><td>`theta_2`</td> <td><input type="text" name="size2" size="2"  value="0" id="th2"></td><td>`\dot{theta_2}`</td> <td><input type="text" name="size2" size="2"  value="0" id="N2"></td></tr>
+                                <tr><td>`theta_3`</td> <td><input type="text" name="size3" size="2"  value="0" id="th3"></td><td>`\dot{theta_3}`</td> <td><input type="text" name="size2" size="2"  value="0" id="N3"></td></tr>
+                                <tr><td>`theta_4`</td> <td><input type="text" name="size4" size="2"  value="0" id="th4"></td><td>`\dot{theta_4}`</td> <td><input type="text" name="size2" size="2"  value="0" id="N4"></td></tr>
+                                <tr><td>`theta_5`</td> <td><input type="text" name="size5" size="2"  value="0" id="th5"></td><td>`\dot{theta_5}`</td> <td><input type="text" name="size2" size="2"  value="0" id="N5"></td></tr>
+                                <tr><td>`theta_6`</td> <td><input type="text" name="size6" size="2"  value="0" id="th6"></td><td>`\dot{theta_6}`</td> <td><input type="text" name="size2" size="2"  value="0" id="N6"></td></tr>
+                                <tr><td colspan ="2" align = "center"><input type="button" value="OK" onclick="myFunction()"></td></tr>
+                            </table></center> <br></fieldset>
+                    <fieldset>
+                        <legend><strong style="padding-bottom: 10px;">Transformation Matrix</strong></legend>
+                        <p id="demo"></p>
+                    </fieldset>
+                </div>
+            </div><!-- End of Input wrapper-->
+            <div id="canvas3d-wrapper">
+                <div id="canvas3d-title">Simulator</div>            
+                <div id="canvas3d-view"></div>                       
+            </div><!-- End of canvas3d wrapper-->
+
+            <div id="controller-graph-wrapper">
+
+                <div id="controller-wrapper">
+                    <div id="controller-title">Controller</div>
+                    <div id="controller-view">
+                        <label style="color: blue" >Joint 1</label><br>
+                        <input id="slider1" type="range" min="-160" max="160" step="1" value="0" oninput="sliderChange()">
+                        <input id="rangeValue1"  type="text" size="2" value="0"><br>
+                        <label  style="color: blue">Joint 2 </label><br>
+                        <input id="slider2" type="range" min="-40" max="15" step="1" value="0" oninput="sliderChange2()">
+                        <input id="rangeValue2" type="text" size="2" value="0"><br>
+                        <label style="color: blue">Joint 3</label><br>
+                        <input id="slider3" type="range"  min="-15" max="40" step="1" value="0" oninput="sliderChange3()">
+                        <input id="rangeValue3" type="text" size="2" value="0"><br>
+                        <label style="color: blue">Joint 4</label><br>
+                        <input id="slider4" type="range" min="-180" max="180" step="1" value="0" oninput="sliderChange4()">
+                        <input id="rangeValue4" type="text" size="2" value="0"><br>
+                        <label style="color: blue">Joint 5</label><br>
+                        <input id="slider5" type="range" min="-100" max="100" step="1" value="0" oninput="sliderChange5()">
+                        <input id="rangeValue5" type="text" size="2" value="0"><br>
+                        <label style="color: blue">Joint 6</label><br>
+                        <input id="slider6" type="range" min="-266" max="266" step="1" value="0" oninput="sliderChange6()">
+                        <input id="rangeValue6" type="text" size="2" value="0"><br>
+                        <input id="sv" type="button" value="CLICK" onclick="getslidervalue()" title="Click to see Transformation Matrix">
+                        <input id="csv" type="button" value="CLEAR" onclick="clearslidervalue()" title="Click to Reset">
+                        <!--<input id="csv" type="button" value="Workspace" onclick="workspace()" title="Workspace">-->
+                    </div>  
+                </div>
+                <div id="graph-wrapper">
+                    <div id="graph-title">Manipulator Position</div>
+                    <div id="view"></div>
+                </div>
+            </div><!-- End of Controller wrapper-->
+        </div><!-- End of main wrapper-->
+
+        <footer class="default" id="lab-footer">
+            <!-- Put the content here-->
+            <div style="margin-left:40%; margin-right:40% ">
+                Copyright &copy; 2011 Indian Institute of Technology Kharagpur,<a href="../license/index.html" target="_blank" style="margin:auto"> Licensing Terms </a>
+            </div>
+        </footer>
+    </center>
+    </body>
+</html>
