@@ -1,0 +1,27 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "What is the number of axis in KGP 50 robot",
+      "answers": {
+        "a": "5",
+        "b": "6",
+        "c": "7",
+        "d": "None of this"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What is the maximum payload of KGP 50 robot",
+      "answers": {
+        "a": "50 Kg",
+        "b": "30 Kg",
+        "c": "100 Kg",
+        "d": "90 Kg"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    }
+  ]
+}

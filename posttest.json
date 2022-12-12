@@ -1,0 +1,27 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "What is the maximum speed of KGP 50 robot",
+      "answers": {
+        "a": "2 m/s",
+        "b": "4 m/s",
+        "c": "1.5 m/s",
+        "d": "1 m/s"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What is the repeatability of KGP 50 robot",
+      "answers": {
+        "a": " 1.5 mm",
+        "b": " 2 mm",
+        "c": " 1 mm",
+        "d": " 3 mm"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    }
+  ]
+}
