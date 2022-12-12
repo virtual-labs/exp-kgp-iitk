@@ -7,7 +7,7 @@ This robot can be made available for technology transfer and educational purpose
 Intelligent systems requiring complex human computer interaction, both in man machine systems and in complex knowledge based Internet environments, are being researched in this laboratory too. The future looks exciting, heading towards a new era of highly interconnected systems, devices and human life. The new prospects of research and development in this laboratory involve embedded systems, autonomous vehicles, etc.
 
 <center>
-<img src="./images/kgp50.jpg">
+<img src="./images/kgp50.jpg" width="35%">
 
 ***Figure 1: KGP 50***
 </center>
@@ -52,7 +52,7 @@ Robot of such complex order (six axis in continuous path mode) are extremely dif
 The robot has an open architecture heart built-in into the system, that enables robot developers to diagnose and improvise the design and/or performance of the robot, even after deployment. This is an important feature for technology developers that is not available to consumers of robot technology as technology adopters. The robot system has been specifically designed with this features, which is no available from any competitors (as it's the core technology of the system) and is very much required for a development industry as well as systems which can be adapted to any high-end applications
 
 <center>
-<img src="./images/kgp50d.jpg">
+<img src="./images/kgp50d.jpg" width="55%">
 
 ***Figure 2: KGP 50 rotation diagram***
 </center>
@@ -63,23 +63,23 @@ The robot has an open architecture heart built-in into the system, that enables 
 
 <center>
 
-<img src="./images/kgp50dimen.jpg">
+<img src="./images/kgp50dimen.jpg" width="55%">
 
 </center>
-    
+
 - ### Math model
 
 <center>
 
-<img src="./images/kinematic.png">
+<img src="./images/kinematic.png" width="55%">
 
 </center>
-    
+
 - ### Controller
 
 <center>
 
-<img src="./images/control.png">
+<img src="./images/control.png" width="55%">
 
 </center>
 
